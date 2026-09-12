@@ -4,9 +4,16 @@ import tailwindcss from '@tailwindcss/vite'
 import fs from 'node:fs'
 import path from 'node:path'
 
-const siteConfiguration = JSON.parse(
-  fs.readFileSync(path.resolve(import.meta.dirname, '../.figma/make/site.json'), 'utf-8'),
-)
+const siteConfigPath = path.resolve(import.meta.dirname, '../.figma/make/site.json')
+let siteConfiguration: Record<string, unknown> = {}
+
+if (fs.existsSync(siteConfigPath)) {
+  try {
+    siteConfiguration = JSON.parse(fs.readFileSync(siteConfigPath, 'utf-8'))
+  } catch {
+    siteConfiguration = {}
+  }
+}
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
