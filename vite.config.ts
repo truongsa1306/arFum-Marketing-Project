@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import fs from 'node:fs'
 import path from 'node:path'
 
-const siteConfigPath = path.resolve(import.meta.dirname, '../.figma/make/site.json')
+const siteConfigPath = path.resolve(import.meta.dirname, './.figma/make/site.json')
 let siteConfiguration: Record<string, unknown> = {}
 
 if (fs.existsSync(siteConfigPath)) {
