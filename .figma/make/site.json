@@ -1,0 +1,14 @@
+{
+  "title": "arFum",
+  "description": "Streamline your project management with a user-friendly platform that enhances collaboration, tracks progress, and boosts team productivity.",
+  "icons": {
+    "icon": "/arfum-logo.png"
+  },
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
